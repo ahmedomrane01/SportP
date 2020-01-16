@@ -6,9 +6,9 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -35,9 +35,8 @@ public class Client {
 	}
 	
 	
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name="num_entreneur", nullable=false)
+
+	@ManyToMany
 	private List<Entreneur> entreneurs;
 	
 	

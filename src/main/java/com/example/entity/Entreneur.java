@@ -1,9 +1,11 @@
 package com.example.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+
 
 @Entity
 public class Entreneur {
@@ -13,22 +15,21 @@ public class Entreneur {
 	private String nom;
 	
 	
-	
-	@OneToMany
-	@JoinColumn(name="num_client", nullable=false)
-	private Client client;
+	@ManyToMany(mappedBy = "entreneurs")
+	private List<Client> clients;
 	
 	
 	
-	public Client getClient() {
-		return client;
+	
+	
+	
+	
+	public List<Client> getClients() {
+		return clients;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
 	}
-	
-	
-	
 	public int getMatricule() {
 		return matricule;
 	}
