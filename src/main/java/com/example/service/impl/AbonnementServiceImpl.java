@@ -2,7 +2,6 @@ package com.example.service.impl;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +15,12 @@ public class AbonnementServiceImpl implements AbonnementService {
 	@Autowired
 	private AbonnementRepository abonnementRepo;
 
-	final static Logger logger = Logger.getLogger(AbonnementServiceImpl.class);
 
 	@Override
 	public void ajouter(Abonnement abonnement) {
 
-		Abonnement AbonnementSaved = abonnementRepo.save(abonnement);
-		logger.info("Abonnement : " + AbonnementSaved.getType());
+	 abonnementRepo.save(abonnement);
+		
 
 	}
 

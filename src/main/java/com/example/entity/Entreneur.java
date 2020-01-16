@@ -33,6 +33,7 @@ public class Entreneur {
 	public int getMatricule() {
 		return matricule;
 	}
+	
 	public void setMatricule(int matricule) {
 		this.matricule = matricule;
 	}
@@ -43,7 +44,10 @@ public class Entreneur {
 		this.nom = nom;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Entreneur [matricule=" + matricule + ", nom=" + nom + ", clients=" + clients + "]";
+	}
 	
 
 }
